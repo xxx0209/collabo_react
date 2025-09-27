@@ -77,7 +77,7 @@ function App() {
                                         value={name}
                                         onChange={(event) => setName(event.target.value)}
                                         isInvalid={!!errors.name}
-                                        required />
+                                    />
                                     <Form.Control.Feedback type="invalid">
                                         {errors.name}
                                     </Form.Control.Feedback>
