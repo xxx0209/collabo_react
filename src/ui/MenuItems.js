@@ -16,13 +16,15 @@ function App({ appName, user, handleLogout }) {
             case 'ADMIN': return (
                 <>
                     <Nav.Link onClick={() => navigate(`/product/insert`)}>상품 등록</Nav.Link>
+                    {/* 관리자는 모든 사람의 주문 내역 확인 */}
+                    <Nav.Link onClick={() => navigate(`/order/list`)}>주문 내역</Nav.Link>
                     <Nav.Link onClick={handleLogout}>로그 아웃</Nav.Link>
                 </>
             );
             case 'USER': return (
                 <>
                     <Nav.Link onClick={() => navigate(`/cart/list`)}>장바구니</Nav.Link>
-                    <Nav.Link onClick={() => navigate(``)}>주문 내역</Nav.Link>
+                    <Nav.Link onClick={() => navigate(`/order/list`)}>주문 내역</Nav.Link>
                     <Nav.Link onClick={handleLogout}>로그 아웃</Nav.Link>
                 </>
             );
@@ -39,6 +41,7 @@ function App({ appName, user, handleLogout }) {
         <Navbar bg="dark" variant="dark" expand="lg">
             <Container>
                 <Navbar.Brand href='/'>{appName}</Navbar.Brand>
+                <Navbar.Brand>{user?.name}</Navbar.Brand>
                 <Nav className="me-auto">
                     {/* 하이퍼링크 : Nav.Link는 다른 페이지로 이동할 때 사용됩니다.  */}
                     <Nav.Link onClick={() => navigate(`/product/list`)}>상품 보기</Nav.Link>

@@ -9,6 +9,7 @@ import ProductInsertForm from './../pages/ProductInsertForm';
 import ProductUpdateForm from './../pages/ProductUpdateForm';
 import ProductDetail from './../pages/ProductDetail';
 import CartList from './../pages/CartList';
+import OrderList from '../pages/OrderList';
 
 
 // 이 파일은 라우팅 정보를 담고 있는 파일입니다.
@@ -35,6 +36,8 @@ function App({ user, handleLoginSuccess }) {
 
             <Route path="/fruit" element={<FruitOne />} />
             <Route path="/fruit/list" element={<FruitList />} />
+
+            <Route path='/order/list/' element={<OrderList user={user} />} />
         </Routes>
     );
 }
